@@ -1,0 +1,58 @@
+cd - zmiana folderu 
+. - wskazanie na aktualny folder
+.. - wskazanie na wyższy folder
+ls/dir - wylistowanie w terminalu zawartości folderu
+
+przykład użycia:
+cd
+PS C:\Users\Admin> cd .\Workspace\RAPSteam\
+
+ls/dir
+PS C:\Users\Admin\Workspace\RAPSteam> dir
+
+
+    Directory: C:\Users\Admin\Workspace\RAPSteam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        22.01.2025     21:38                Modul_1
+-a----        22.01.2025     21:05           3586 .gitignore
+-a----        22.01.2025     21:05             72 README.md
+
+sudo - "super user do" wykonaj polecenie jako super uzytkownik, analogia do windowsowego okienka instalacji jako admin
+apt install - za pomocą menadżera pakietów zainstaluj paczkę/aplikację następującą po spacji
+            "apt" jest menadżerem pakietów typowy dla popularnych dystrybucji linuxa np. Ubuntu
+            mogą być inne menadżery np "dnf" w dystrybucji Fedora lub "yum" w Arch
+
+przykład użycia: 
+sudo apt install python3 - zainstuluj paczkę najnowszej wersji python w wersji 3
+sudo apt install python2 - jw. tylko python w wersji 2 (już przedawnionej)
+sudo apt install python3.8 - jw. python 3 ale w podwersji 3.8 (najnowszy może być python 3.12)
+
+przykład użycia:
+ sudo apt install python3.11
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libpython3.11-minimal libpython3.11-stdlib python3.11-minimal
+Suggested packages:
+  python3.11-venv python3.11-doc
+The following NEW packages will be installed:
+  libpython3.11-minimal libpython3.11-stdlib python3.11 python3.11-minimal
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5615 kB of archives.
+After this operation, 21.5 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+
+python3 - użycie w terminalu wywoła uruchomienie terminala w trybie skryptowym
+
+przykład użycia:
+python3
+Python 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+
+python3 --version - użycie w terminalu pokaże wersję która jest uruchamiana pod tą komendą 
+Python 3.10.12

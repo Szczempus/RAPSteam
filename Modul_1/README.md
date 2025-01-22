@@ -2,6 +2,8 @@
 
 ## Lekcja 1
 
+Komendy zawarte w Lekcja1.txt
+
 ### Wstęp (5 min)
 - [ ] Przedstawienie się i opowiedzenie o sobie i swoim doświadczeniu 
 - [ ] Ustalenie poziomu grupy, zorientowanie się ile osób wie czym jest programowanie, czym jest jezyk Python, czy już coś programowali kiedyś i dlaczego tutaj są. 
