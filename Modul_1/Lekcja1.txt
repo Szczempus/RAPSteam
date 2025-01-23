@@ -56,3 +56,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 python3 --version - użycie w terminalu pokaże wersję która jest uruchamiana pod tą komendą 
 Python 3.10.12
+
+python3 -m venv ./workspace/python_environment - stworzenie środowiska wirtualengo na ścieżce
+worksapce->python_environment, relatywnej do aktualnie otwartego folderu
+source ./worksapce/python_environment/bin/activate -  
