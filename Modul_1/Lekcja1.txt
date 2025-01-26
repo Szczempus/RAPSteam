@@ -59,4 +59,8 @@ Python 3.10.12
 
 python3 -m venv ./workspace/python_environment - stworzenie środowiska wirtualengo na ścieżce
 worksapce->python_environment, relatywnej do aktualnie otwartego folderu
-source ./worksapce/python_environment/bin/activate -  
+source ./worksapce/python_environment/bin/activate - aktywowanie środowiska uruchomieniowego 
+dla konkretnej wersji interpretera python
+
+
+

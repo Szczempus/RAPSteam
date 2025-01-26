@@ -1,0 +1,86 @@
+Zadanie 1: Typy zmiennych w praktyce
+Instrukcja:
+Zadeklaruj zmienne:
+    - wiek = 25 (int),
+    - temperatura = 36.6 (float),
+    - imie = "Anna" (string),
+    - znak = 'A' (char).
+Wypisz ich typy za pomocą type().
+Przekonwertuj wiek na float, a temperatura na int. Co się stało z częścią dziesiętną?
+
+
+Zadanie 2: Operacje na typach
+Instrukcja:
+Oblicz 5 + 2.5 i określ typ wyniku.
+Połącz stringi "Python" i "3.10" (użyj +).
+Spróbuj dodać "Liczba: " + 10. Dlaczego występuje błąd? Jak go naprawić?
+
+
+Zadanie 3: Kontrola precyzji float
+Instrukcja:
+Zmień liczbę 3.1415926535 na format z dwoma miejscami po przecinku (użyj round()).
+Wypisz wynik w formacie: Pi ≈ 3.14.
+
+
+Zadanie 4: Input() i print()
+Instrukcja:
+Stwórz skrypt dane.py, który:
+Pyta użytkownika o imię i wiek (użyj input()),
+Wypisuje: "Cześć [imię]! Za 5 lat będziesz mieć [wiek + 5] lat."
+Przykład:
+
+Imię: Kasia  
+Wiek: 20  
+Wyjście: Cześć Kasia! Za 5 lat będziesz mieć 25 lat.
+
+
+Zadanie 5: Formatowanie stringów
+Instrukcja:
+Utwórz zmienne: produkt = "mleko", cena = 2.99, ilosc = 5.
+Wypisz zdanie: "5 sztuk mleko kosztuje 14.95 zł" używając:
+    - F-stringów,
+    - Formatowania z dwoma miejscami po przecinku dla kwoty.
+
+
+Zadanie 6: Metody lower() i upper()
+Instrukcja:
+Poproś użytkownika o wpisanie dowolnego tekstu.
+Wypisz tekst:
+    - Wszystkimi wielkimi literami,
+    - Wszystkimi małymi literami,
+    - Z pierwszą literą wielką.
+
+
+Zadanie 7: Import biblioteki
+Instrukcja:
+Zaimportuj moduł math.
+Oblicz pierwiastek kwadratowy z 16 i wypisz wynik.
+Wypisz wartość stałej π z tego modułu
+
+
+Zadanie 8: Instalacja biblioteki
+Instrukcja:
+Zainstaluj bibliotekę turtle przez PIP (jeśli nie jest zainstalowana).
+Stwórz skrypt kwadrat.py, który rysuje kolorowy kwadrat:
+
+import turtle  
+t = turtle.Turtle()  
+for _ in range(4):  
+    t.forward(100)  
+    t.left(90)  
+turtle.done()
+
+
+Zadanie 9: Zarządzanie bibliotekami
+Instrukcja:
+W konsoli wykonaj pip list i znajdź nazwę zainstalowanej biblioteki (np. turtle).
+Sprawdź jej wersję przez pip show turtle.
+
+
+Zadanie 10: Analiza błędów
+Instrukcja:
+Dlaczego ten kod nie działa? Napraw go:
+liczba = input("Podaj liczbę: ")  
+wynik = liczba * 2  
+print(f"Wynik: {wynik}")  
+Wskazówka: Jaki typ zwraca input()?

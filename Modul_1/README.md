@@ -50,6 +50,9 @@ Komendy zawarte w Lekcja1.txt
 ### Wstęp (5 min)
 
 ### Nauczenie zasad tworzenia i struktury skryptów w języku Python (35 min)
+- [ ] Zakodowanie prostego "Hello World" w trybie interaktywnym i skryptowym 
+- [ ] Wyjaśnienie różnicy między trybem interaktywnym i skryptowym
+- [ ] Stworzenie swojego pierwszego skryptu w pliku .py
 - [ ] Zaprezentowanie skryptowości języka python za pomocą kolejności dodawania wartości do zmiennych i prezentowania ich za pomocą printf
 - [ ] Wprowadzenie if __name\_\_ == __main\_\_ i jak wygląda proces przetwarzania zmiennych wewnątrz tej konstrukcji. 
 - [ ] Pokazanie zasady wcięć i jakie to ma znaczenie w kodzie 
@@ -75,6 +78,7 @@ b = 0
 print(f"a: {a}, b: {b} \n")
 ```
 - [ ] Omówienie print()
+- [ ] Uruchomienie pliku .py w konsoli
 
 ### Podsumowanie (5 min)
 - [ ] Plansza z rzeczami które się dowiedzieliśmy
@@ -82,3 +86,34 @@ print(f"a: {a}, b: {b} \n")
 
 ## Lekcja 3
 
+### Umiejętność uruchamiania kodu w konsoli za pomocą interpretera
+
+
+### Zdolność wykonywania prostych operacji matematycznych i manipulacji tekstowych
+
+
+## Lekcja 4
+
+### Zrozumienie podstawowych typów zmiennych w Pythonie
+- [ ] Wytłumaczenie typów int, float, string i char 
+- [ ] Edycja zakresów liczb po przecinku 
+- [ ] Konwersja typów int -> float, float -> int
+- [ ] Operacje na typach liczbowych i typach znakowych
+
+### Pozaninie metod odczytywania danych wejściowych i wyprowadzania wyników 
+- [ ] Poznanie funkcji input()
+- [ ] Poznanie funkcji print()
+- [ ] Stworzenie prostego skryptu który bedzie odczytywał dane podane od użytkownika i wypisywał w konsoli 
+- [ ] Zapoznanie się z formatowaniem stringów
+- [ ] Formatowanie stringów 
+- [ ] Edycja formatu wyjścia za pomocą print(f'') znaków i liczb 
+- [ ] Poznianie funkcji wbudowanych "lower()" "upper()"
+
+### Rozumienie korzystania z bibliotek w pythonie oraz zadządzanie mini za pomoca PIP 
+- [ ] Wprowadzenie do bibliotek czym są 
+- [ ] Przykład zaimportowania biblitoek 
+- [ ] Plusy i minisu ich używania 
+- [ ] Instalacja biblitoek za pomocą PIP, zapoznanie ze stroną pypi.org (pip install)
+- [ ] Przykład z instalacją i użyciem bilbioteki "turtle"
+- [ ] Napisanie prostego skryptu wykorzystującego bibliotekę
+- [ ] Wypisanie za bibliotek za pomocą komendy *pip list*
