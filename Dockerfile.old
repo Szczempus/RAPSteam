@@ -1,0 +1,38 @@
+# Use Python slim image
+FROM python:3.9-slim
+
+# Install required dependencies
+RUN apt-get update && apt-get install -y \
+    bash  \
+    python3-pip \
+    python3-tk \
+    python3-dev \
+    xvfb \
+    x11-utils \
+    gnome-screenshot \
+    lxterminal \
+    && rm -rf /var/lib/apt/lists/*
+
+# Ensure bash is the default shell
+SHELL ["/bin/bash", "-c"]
+
+# Install Python libraries
+RUN pip install --upgrade pip
+RUN pip install pyvirtualdisplay pyautogui pillow==9.2.0 pygetwindow
+
+# Set working directory
+WORKDIR /app
+
+# Copy application files
+COPY ./create_grafical_outcomes.py /app/
+COPY ./files /app/files
+
+# Ensure permissions
+RUN mkdir -p /app/outcome && chmod 777 /app/outcome
+
+# Set environment variables for Xvfb
+ENV DISPLAY=:99
+RUN touch /root/.Xauthority
+
+CMD Xvfb :99 -screen 0 1366x768x24 & python /app/create_grafical_outcomes.py && tail -f /dev/null
+
