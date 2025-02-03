@@ -1,0 +1,9 @@
+
+
+docker build -t python_image .
+
+docker run -v ./files:/app/files -v ./outcome:/app/outcome python_image
+docker run  -v ./outcome:/app/outcome python_image
+
+
+docker run -it -v ./files:/app/files -v ./outcome:/app/outcome python_image /bin/bash
