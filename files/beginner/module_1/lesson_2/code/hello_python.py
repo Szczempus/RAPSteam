@@ -1,7 +1,7 @@
 # Plik: hello_python.py
 
-"""
-Moduł obsługujący operacje matematyczne.
-Autor: Jan Kowalski
-Data: 2025-02-05
-"""
+def powitanie():
+    return f"Witaj w świecie Pythona!"
+
+
+print(powitanie())

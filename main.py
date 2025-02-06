@@ -91,36 +91,45 @@ def main():
     # Możesz dać False, żeby wszystko działo się w tle.
     word_app.Visible = True
 
-    doc_path = "file.docx"
-    output_doc_path = "final.docx"
+    doc_path = "python_podstawowy.docx"
+    output_doc_path = "python_podstawowy_final.docx"
 
     try:
         # Otwórz dokument bazowy
         doc = word_app.Documents.Open(os.path.abspath(doc_path))
 
         # ----------------------------------------------------------------
-        # Znajdź wszystkie pliki .py w folderze files/
+        # Znajdź wszystkie pliki .py w katalogu files/beginner/
         # ----------------------------------------------------------------
-        py_files = glob.glob(os.path.join("files", "*.py"))
+        py_files = glob.glob(os.path.join("files/beginner", "**", "*.py"), recursive=True)
 
         for py_file in py_files:
-            # Nazwa pliku bez ścieżki i rozszerzenia
-            # np. files/zadanie_1.py -> nazwa: "zadanie_1"
+            # Pobierz nazwę pliku bez ścieżki i rozszerzenia
             base_name = os.path.splitext(os.path.basename(py_file))[0]
 
-            # 1. Generuj rtf
+            # Tworzymy placeholder w formacie zgodnym ze strukturą katalogów
+            # np. "lesson_2/code/bad.py" -> "lesson_2_code_bad"
+            relative_path = os.path.relpath(py_file, "files/beginner")
+            # if last dir is not /code/ then skip
+            elements = relative_path.split(os.sep)
+            if not elements[-2] == "code" or "__init__" in relative_path:
+                continue
+            placeholder_name = relative_path.replace(os.sep, "_").replace("code_", "")
+            placeholder_name = f"[{placeholder_name}]"
+
+            # 1. Generuj RTF
             rtf_file = os.path.join("files", base_name + ".rtf")
             py_to_rtf(py_file, rtf_file, style_name="colorful")
 
             # 2. Kopiuj do Schowka
             copy_rtf_to_clipboard(word_app, rtf_file)
 
-            # 3. Zastąp placeholder 'base_name' w dokumencie
-            replaced = replace_placeholder_with_table(doc, base_name)
+            # 3. Zastąp placeholder w dokumencie
+            replaced = replace_placeholder_with_table(doc, placeholder_name)
             if replaced:
-                print(f"Wstawiono kod z {py_file} w miejsce: {base_name}")
+                print(f"Wstawiono kod z {py_file} w miejsce: {placeholder_name}")
             else:
-                print(f"Nie znaleziono placeholdera: {base_name}")
+                print(f"Nie znaleziono placeholdera: {placeholder_name}")
 
         # Zapisz wynik
         doc.SaveAs(os.path.abspath(output_doc_path))
