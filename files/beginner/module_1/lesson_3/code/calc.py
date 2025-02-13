@@ -8,5 +8,5 @@ def odejmij(a, b):
     return a - b
 
 
-dodaj(5, 3)  # Wynik: 8
-odejmij(10, 4)  # Wynik: 6
+print(dodaj(5, 3))
+print(odejmij(10, 4))
