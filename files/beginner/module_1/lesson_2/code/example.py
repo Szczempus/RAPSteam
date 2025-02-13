@@ -13,3 +13,5 @@ def greet(name):
 # Wywołanie funkcji, jeśli skrypt jest uruchamiany bezpośrednio
 if __name__ == "__main__":
     print(greet("Patryk"))  # Wcięcia 4 spacje
+
+print("Koniec skryptu")  # Wcięcia 0 spacji

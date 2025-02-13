@@ -6,4 +6,5 @@ def funkcja_z_dluga_nazwa(argument_pierwszy, argument_drugi,
     return argument_pierwszy + argument_drugi + argument_trzeci + argument_czwarty
 
 
-funkcja_z_dluga_nazwa(1, 2, 3, 4)
+wynik = funkcja_z_dluga_nazwa(1, 2, 3, 4)
+print(wynik)

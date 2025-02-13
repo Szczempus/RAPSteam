@@ -1,5 +1,5 @@
 # Plik: arguments.py
-# Inputs: "1" "2" "3"
+# Argumenty: 1 2 3
 import sys
 
 if len(sys.argv) > 1:

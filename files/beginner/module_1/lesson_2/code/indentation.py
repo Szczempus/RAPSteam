@@ -3,4 +3,5 @@ def say_hello():
     print("Cześć!")  # Wcięcie 4 spacji
 
 
-say_hello()
+hello = say_hello()
+print(hello)  # Wcięcie 0 spacji
