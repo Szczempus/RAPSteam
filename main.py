@@ -9,7 +9,7 @@ from pygments.lexers import PythonLexer
 
 def py_to_rtf(py_file, rtf_file, style_name="colorful"):
     """
-    Konwertuje plik .py na plik .rtf z kolorowaniem Pygments.
+    Konwgpertuje plik .py na plik .rtf z kolorowaniem Pygments.
     """
     with open(py_file, "r", encoding="utf-8") as f:
         code = f.read()
@@ -32,6 +32,9 @@ def copy_rtf_to_clipboard(word_app, rtf_path):
 
     # Zamknij dokument RTF bez zapisywania
     rtf_doc.Close(SaveChanges=False)
+
+    # Usuń RTF
+    os.remove(rtf_path)
 
 
 def replace_placeholder_with_table(doc, placeholder_text):
