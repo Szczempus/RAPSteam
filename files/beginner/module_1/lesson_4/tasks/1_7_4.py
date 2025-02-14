@@ -1,4 +1,4 @@
-# Zadanie 1_7_4.py
+# Zadanie: 1_7_4.py
 # Input: Jan Kowalski 1990
 
 from datetime import datetime
