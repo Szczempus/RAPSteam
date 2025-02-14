@@ -98,7 +98,7 @@ def extract_arguments_from_file(file_path):
             for line in f:
                 match = re.search(r'#\s*Argumenty:\s*(.*)', line)
                 if match:
-                    return match.group(1).strip().split()  # Zwracamy listę argumentów
+                    return match.group(1).strip().split(',')  # Zwracamy listę argumentów
     except Exception as e:
         print(f"❌ Błąd podczas odczytu pliku: {file_path} - {e}")
     return []  # Brak argumentów
