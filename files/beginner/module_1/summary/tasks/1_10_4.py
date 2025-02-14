@@ -1,3 +1,5 @@
+# Input: Jan,Kowalski
+
 imie = input("Podaj imię: ").strip()
 nazwisko = input("Podaj nazwisko: ").strip()
 

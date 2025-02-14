@@ -1,4 +1,4 @@
-# Input: 2 3
+# Input: 2,3
 
 import math
 

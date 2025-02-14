@@ -1,10 +1,11 @@
-import turtle
+# Input: 25
+
 import math
+import turtle
 
 promien = float(input("Podaj promień okręgu: "))
 
 t = turtle.Turtle()
-
 
 t.circle(promien)
 
