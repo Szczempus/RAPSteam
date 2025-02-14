@@ -1,10 +1,13 @@
+# Zadanie: 1_10_3.py
+# Input: 2 3
+
 a = float(input("Podaj pierwszą liczbę: "))
 b = float(input("Podaj drugą liczbę: "))
 
 suma = a + b
 różnica = a - b
-iloczyn =   a * b
-iloraz = a /b
+iloczyn = a * b
+iloraz = a / b
 
 print(f"\nSuma: {suma}")
 print(f"Różnica: {różnica}")

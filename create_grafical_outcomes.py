@@ -1,7 +1,5 @@
 import glob
 import os
-import re
-import subprocess
 import time
 
 import cv2
@@ -16,7 +14,7 @@ python_exe = r"C:\Users\Patryk\AppData\Local\Programs\Python\Python311\python.ex
 script_folder = "files/beginner"
 
 # Pobieranie plików .py w podfolderach "code"
-py_files = glob.glob(os.path.join(script_folder, "**", "code", "*.py"), recursive=True)
+py_files = glob.glob(os.path.join(script_folder, "**", "tasks", "*.py"), recursive=True)
 
 
 def crop_me(screenshot_path):
@@ -46,7 +44,7 @@ def crop_me(screenshot_path):
     for y in range(image.shape[0] - 1, -1, -1):  # Iterujemy od dołu do góry
         row_text = mask_text[y, :]  # Pobieramy linię w masce
 
-        print(f"Rząd {y}: {np.count_nonzero(row_text)}")  # Liczba pikseli tekstu w wierszu
+        # print(f"Rząd {y}: {np.count_nonzero(row_text)}")  # Liczba pikseli tekstu w wierszu
 
         if np.count_nonzero(row_text) >= 50:  # Jeśli wiersz ma ≥ 45 pikseli tekstu
             cut_y = y
@@ -89,18 +87,37 @@ def crop_me(screenshot_path):
         print(f"⚠️ Plik nie istnieje: {screenshot_path}")
 
 
+import re
+import subprocess
+
+
 def extract_arguments_from_file(file_path):
     """Pobiera argumenty z komentarza # Argumenty: "1" "2" "3"."""
     try:
         with open(file_path, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-            for line in lines:
-                match = re.search(r'#\s*Argumenty:\s*"(.+?)"', line)
+            for line in f:
+                match = re.search(r'#\s*Argumenty:\s*(.*)', line)
                 if match:
-                    return match.group(1)  # Zwracamy argumenty w postaci stringa
+                    return match.group(1).strip().split()  # Zwracamy listę argumentów
     except Exception as e:
         print(f"❌ Błąd podczas odczytu pliku: {file_path} - {e}")
-    return ""  # Brak argumentów
+    return []  # Brak argumentów
+
+
+def extract_inputs_from_file(file_path):
+    """Pobiera inputy z komentarza # Input: "1" "2" "3"."""
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            for line in f:
+                match = re.search(r'#\s*Input:\s*(.*)', line)
+                if match:
+                    return match.group(1).strip().split()  # Zwracamy listę wartości inputów
+    except Exception as e:
+        print(f"❌ Błąd podczas odczytu pliku: {file_path} - {e}")
+    return []  # Brak inputów
+
+
+# Input: 1 2 3
 
 
 for py_file in py_files:
@@ -120,15 +137,31 @@ for py_file in py_files:
 
     # Pobieramy argumenty z pliku
     arguments = extract_arguments_from_file(py_file)
+    inputs = extract_inputs_from_file(py_file)
 
-    # Tworzymy polecenie CMD do uruchomienia skryptu w nowym oknie
+    print(f"🔧 Argumenty: {arguments}")
+    print(f"🔧 Inputy: {inputs}")
+
+    # Tworzymy ciąg argumentów do przekazania w CMD
+    arguments_str = " ".join(arguments)  # np. "1 2 3"
+
+    # Tworzymy ciąg `echo` do przekazania wartości do input()
+    input_str = " && ".join([f"echo {val}" for val in inputs]) if inputs else ""
+
+    # Tworzymy polecenie CMD do uruchomienia skryptu
     cmd_command = f'start cmd /k "color F0 && {python_exe} {py_file} {arguments}"'
 
-    # Uruchamiamy CMD z białym tłem
-    process = subprocess.Popen(cmd_command, shell=True, text=True)
+    process = subprocess.Popen(cmd_command, shell=True, stdin=subprocess.PIPE, text=True)
+    time.sleep(1)
 
-    # Czekamy chwilę, aby CMD się otworzyło i było widoczne
-    time.sleep(2)
+    if inputs:
+        print(f"🔧 Wprowadzam inputy: {inputs}")
+
+        # Wysyłamy inputy do otwartego okna CMD
+        for value in inputs:
+            time.sleep(.1)
+            pyautogui.write(value)  # Wpisuje tekst
+            pyautogui.press("enter")  # Naciska Enter
 
     # Znalezienie okna CMD
     windows = [w for w in gw.getAllWindows() if "cmd" in w.title.lower() or "command prompt" in w.title.lower()]
@@ -172,7 +205,13 @@ for py_file in py_files:
     print(f"📸 Screenshot zapisany: {screenshot_path}")
 
     # Zamknięcie okna CMD
-    subprocess.Popen("taskkill /F /IM cmd.exe", shell=True)
+    try:
+        subprocess.Popen("taskkill /F /IM cmd.exe", shell=True)
+        process.terminate()  # Próba zakończenia procesu
+        time.sleep(1)  # Dajemy czas na zamknięcie
+        process.kill()  # Wymuszone zamknięcie, jeśli nie zakończyło się poprawnie
+    except Exception as e:
+        pass
 
     crop_me(screenshot_path)
     print("🔥" * 20)

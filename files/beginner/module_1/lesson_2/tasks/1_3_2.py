@@ -1,5 +1,5 @@
 # Zadanie: 1_3_2.py
-
+# Input: 2 3
 def obliczPole(szerokosc, wysokosc):
     return szerokosc * wysokosc
 
@@ -11,6 +11,6 @@ print("Podaj wysokość:")
 wys = int(input())
 
 pole = obliczPole(szer, wys)
-obwod = 2 * (szer + wys)  # Dodana obliczeniowa obwodu
+wynik = 2 * (szer + wys)  # Dodana obliczeniowa obwodu
 
-print("Pole:", pole, "Obwód:", obwod)
+print("Pole:", pole, "Obwód:", wynik)

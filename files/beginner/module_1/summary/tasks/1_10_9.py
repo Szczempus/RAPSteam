@@ -1,6 +1,8 @@
+# Input: 2 3
+
 import math
 
-promien = float(input("Podaj promień podstawy walca (w cm): ")) 
+promien = float(input("Podaj promień podstawy walca (w cm): "))
 wysokosc = float(input("Podaj wysokość walca (w cm): "))
 
 pole_podstawy = math.pi * promien ** 2

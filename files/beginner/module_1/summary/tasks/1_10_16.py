@@ -1,3 +1,5 @@
+# Input: 175 80
+
 wzrost_cm = float(input("Podaj wzrost w centymetrach: "))
 waga_kg = float(input("Podaj wagę w kilogramach: "))
 

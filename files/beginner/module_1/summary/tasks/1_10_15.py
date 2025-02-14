@@ -1,3 +1,4 @@
+# Input: abcdef
 tekst = input("Podaj ciąg znaków: ").strip()
 
 lista_slow = tekst.split()

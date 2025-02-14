@@ -1,3 +1,4 @@
+# Input: 2 3 4 5 6 
 wprowadzenie1 = input("Podaj elementy pierwszego zbioru (oddziel spacjami): ").strip()
 zbior1 = set(wprowadzenie1.split())
 

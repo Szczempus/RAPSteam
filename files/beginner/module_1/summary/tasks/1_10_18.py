@@ -1,3 +1,4 @@
+# Input: Jan Kowalski 18 uczeń
 imie = input("Podaj imię: ").strip()
 nazwisko = input("Podaj nazwisko: ").strip()
 wiek = int(input("Podaj wiek: ").strip())
