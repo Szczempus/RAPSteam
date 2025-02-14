@@ -1,4 +1,5 @@
-3
+# Input: 5
+
 liczba = int(input("Podaj liczbę od 1 do 10: "))
 
 print(f"{liczba} x 1 = {liczba * 1}")

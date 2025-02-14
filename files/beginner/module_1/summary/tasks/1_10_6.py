@@ -1,4 +1,5 @@
 # Input: 100
+
 km = float(input("Podaj odległość w kilometrach: ").strip())
 miles = km * 0.621371
 

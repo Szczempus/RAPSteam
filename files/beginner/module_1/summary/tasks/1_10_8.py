@@ -1,4 +1,5 @@
-# Input: 2 3
+# Input: 2,3
+
 a = float(input("Podaj długość pierwszego boku prostokąta (w cm): "))
 b = float(input("Podaj długosć drugiego boku prostokąta (w cm): "))
 
