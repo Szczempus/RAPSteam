@@ -1,4 +1,5 @@
 # Argumenty: 1 2 3
+
 import sys
 
 # Pobranie argumentów (pomijając nazwę skryptu)
