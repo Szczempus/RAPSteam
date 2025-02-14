@@ -115,9 +115,9 @@ def main():
             relative_path = os.path.relpath(py_file, "files/beginner")
             # if last dir is not /code/ then skip
             elements = relative_path.split(os.sep)
-            if not elements[-2] == "code" or "__init__" in relative_path:
+            if not elements[-2] in ["code", "tasks"] or "__init__" in relative_path:
                 continue
-            placeholder_name = relative_path.replace(os.sep, "_").replace("code_", "")
+            placeholder_name = relative_path.replace(os.sep, "_").replace("code_", "").replace("tasks_", "")
             placeholder_name = f"[{placeholder_name}]"
 
             # 1. Generuj RTF

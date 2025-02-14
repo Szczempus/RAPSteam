@@ -121,7 +121,7 @@ def extract_inputs_from_file(file_path):
 
 
 for py_file in py_files:
-    time.sleep(1)
+    time.sleep(2)
     py_file = os.path.abspath(py_file)  # Pełna ścieżka
     if not os.path.exists(py_file) or "__init__" in py_file:
         print(f"❌ Pominięto: {py_file}")
@@ -152,7 +152,7 @@ for py_file in py_files:
     cmd_command = f'start cmd /k "color F0 && {python_exe} {py_file} {arguments}"'
 
     process = subprocess.Popen(cmd_command, shell=True, stdin=subprocess.PIPE, text=True)
-    time.sleep(.5)
+    time.sleep(1)
 
     if inputs:
         print(f"🔧 Wprowadzam inputy: {inputs}")
@@ -173,7 +173,7 @@ for py_file in py_files:
     cmd_window = windows[0]  # Ostatnio otwarte okno CMD
 
     # x, y, width, height = cmd_window.left, cmd_window.top, cmd_window.width, cmd_window.height
-    time.sleep(.5)  # Dajemy czas na aktywację
+    time.sleep(1)  # Dajemy czas na aktywację
     # Nowe wymiary okna CMD w pikselach
     width = 1000
     height = 600
@@ -185,10 +185,10 @@ for py_file in py_files:
     # Ustawienie pozycji i rozmiaru okna CMD
     cmd_window.moveTo(x, y)  # Przesunięcie okna
     cmd_window.resizeTo(width, height)  # Zmiana rozmiaru
-    time.sleep(.5)
+    time.sleep(1)
     # **Aktywujemy okno CMD przed zrobieniem screenshota**
     cmd_window.activate()
-    time.sleep(.5)  # Dajemy czas na aktywację
+    time.sleep(1)  # Dajemy czas na aktywację
 
     # **Klikamy w środek okna CMD, aby upewnić się, że jest aktywne**
     pyautogui.click(x + width // 2, y + height // 2)
