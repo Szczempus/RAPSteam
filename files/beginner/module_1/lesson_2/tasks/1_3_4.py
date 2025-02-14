@@ -1,4 +1,4 @@
-# Zadanie: 1.3.4.py
+# Zadanie: 1_3_4.py
 
 import sys
 

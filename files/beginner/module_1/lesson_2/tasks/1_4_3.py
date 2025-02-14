@@ -1,4 +1,4 @@
-# Zadanie: 1.4.3.py
+# Zadanie: 1_4_3.py
 
 import math
 
