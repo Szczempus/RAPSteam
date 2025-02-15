@@ -86,6 +86,112 @@ def replace_placeholder_with_table(doc, placeholder_text):
     return True
 
 
+def replace_placeholder_with_img(doc, placeholder_text, img_file):
+    """
+    Wyszukuje placeholder w dokumencie i zamienia go na obraz PNG.
+
+    :param doc: Dokument Word
+    :param placeholder_text: Tekst placeholdera do zastąpienia
+    :param img_file: Ścieżka do pliku obrazu
+    :return: True, jeśli zamiana się powiodła, False w przeciwnym razie
+    """
+    main_range = doc.Content
+    find = main_range.Find
+
+    find.Text = placeholder_text
+    find.ClearFormatting()
+    find.Replacement.ClearFormatting()
+    find.Wrap = 0  # wdFindStop (brak kontynuacji wyszukiwania)
+
+    found = find.Execute()
+    if not found:
+        return False
+
+    # Znaleziony placeholder -> zamieniamy na obraz
+    start_pos = main_range.Start
+    end_pos = main_range.End
+    found_range = doc.Range(Start=start_pos, End=end_pos)
+    found_range.Text = ""  # Usunięcie placeholdera
+
+    # Wstawienie obrazu do dokumentu
+    print(img_file)
+    img_shape = found_range.InlineShapes.AddPicture(img_file)
+    img_shape.LockAspectRatio = True  # Zachowanie proporcji
+    # img_shape.Width = 300  # Opcjonalnie: ustawienie szerokości
+    # img_shape.Height = 200  # Opcjonalnie: ustawienie wysokości
+
+    return True
+
+
+def insert_img(img_file, word_app, doc):
+    """
+    Wstawia obraz PNG do dokumentu Word w miejscu określonego placeholdera.
+
+    :param img_file: Ścieżka do pliku obrazu PNG
+    :param word_app: Obiekt aplikacji Word (win32com.client.Dispatch)
+    :param doc: Obiekt dokumentu Word
+    """
+    if not img_file.lower().endswith(".png"):
+        print(f"Pominięto nieobsługiwany plik: {img_file}")
+        return
+
+    # Konwersja ścieżki na absolutną i zamiana na format Windows
+    img_file = os.path.abspath(img_file)
+    img_file = img_file.replace("/", "\\")  # Zamiana na format Windows
+
+    if not os.path.exists(img_file):
+        print(f"❌ Plik nie istnieje: {img_file}")
+        return
+
+    base_name = os.path.splitext(os.path.basename(img_file))[0]
+
+    # Tworzymy placeholder na podstawie ścieżki
+    relative_path = os.path.relpath(img_file, "files/beginner")
+    relative_path = relative_path.replace("/", "_").replace("\\", "_")  # Zamiana separatorów
+    elements = relative_path.split("_")
+
+    # Warunek: Obraz musi znajdować się w katalogu 'screenshots'
+    if "screenshots" not in elements or "__init__" in relative_path:
+        return
+
+    placeholder_name = f"[{relative_path.replace('screenshots_', '')}]"
+
+    # Wstawienie obrazu zamiast placeholdera
+    replaced = replace_placeholder_with_img(doc, placeholder_name, img_file)
+    if replaced:
+        print(f"✅ Wstawiono obraz: {img_file} w miejsce: {placeholder_name}")
+    else:
+        print(f"⚠️ Nie znaleziono placeholdera: {placeholder_name}")
+
+
+def insert_code(py_file, word_app, doc):
+    base_name = os.path.splitext(os.path.basename(py_file))[0]
+
+    # Tworzymy placeholder w formacie zgodnym ze strukturą katalogów
+    # np. "lesson_2/code/bad.py" -> "lesson_2_code_bad"
+    relative_path = os.path.relpath(py_file, "files/beginner")
+    # if last dir is not /code/ then skip
+    elements = relative_path.split(os.sep)
+    if not elements[-2] in ["code", "tasks"] or "__init__" in relative_path:
+        return
+    placeholder_name = relative_path.replace(os.sep, "_").replace("code_", "").replace("tasks_", "")
+    placeholder_name = f"[{placeholder_name}]"
+
+    # 1. Generuj RTF
+    rtf_file = os.path.join("files", base_name + ".rtf")
+    py_to_rtf(py_file, rtf_file, style_name="colorful")
+
+    # 2. Kopiuj do Schowka
+    copy_rtf_to_clipboard(word_app, rtf_file)
+
+    # 3. Zastąp placeholder w dokumencie
+    replaced = replace_placeholder_with_table(doc, placeholder_name)
+    if replaced:
+        print(f"Wstawiono kod z {py_file} w miejsce: {placeholder_name}")
+    else:
+        print(f"Nie znaleziono placeholdera: {placeholder_name}")
+
+
 # -------------------------------------------------------------------
 # 4. Główna funkcja
 # -------------------------------------------------------------------
@@ -101,38 +207,15 @@ def main():
         # Otwórz dokument bazowy
         doc = word_app.Documents.Open(os.path.abspath(doc_path))
 
-        # ----------------------------------------------------------------
-        # Znajdź wszystkie pliki .py w katalogu files/beginner/
-        # ----------------------------------------------------------------
         py_files = glob.glob(os.path.join("files/beginner", "**", "*.py"), recursive=True)
+        png_files = glob.glob(os.path.join("files/beginner", "**", "*.png"), recursive=True)
 
-        for py_file in py_files:
-            # Pobierz nazwę pliku bez ścieżki i rozszerzenia
-            base_name = os.path.splitext(os.path.basename(py_file))[0]
+        # for py_file in py_files:
+        #     insert_code(py_file, word_app, doc)
 
-            # Tworzymy placeholder w formacie zgodnym ze strukturą katalogów
-            # np. "lesson_2/code/bad.py" -> "lesson_2_code_bad"
-            relative_path = os.path.relpath(py_file, "files/beginner")
-            # if last dir is not /code/ then skip
-            elements = relative_path.split(os.sep)
-            if not elements[-2] in ["code", "tasks"] or "__init__" in relative_path:
-                continue
-            placeholder_name = relative_path.replace(os.sep, "_").replace("code_", "").replace("tasks_", "")
-            placeholder_name = f"[{placeholder_name}]"
-
-            # 1. Generuj RTF
-            rtf_file = os.path.join("files", base_name + ".rtf")
-            py_to_rtf(py_file, rtf_file, style_name="colorful")
-
-            # 2. Kopiuj do Schowka
-            copy_rtf_to_clipboard(word_app, rtf_file)
-
-            # 3. Zastąp placeholder w dokumencie
-            replaced = replace_placeholder_with_table(doc, placeholder_name)
-            if replaced:
-                print(f"Wstawiono kod z {py_file} w miejsce: {placeholder_name}")
-            else:
-                print(f"Nie znaleziono placeholdera: {placeholder_name}")
+        for img_file in png_files:
+            print(img_file)
+            insert_img(img_file, word_app, doc)
 
         # Zapisz wynik
         doc.SaveAs(os.path.abspath(output_doc_path))
