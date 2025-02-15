@@ -117,8 +117,6 @@ def replace_placeholder_with_img(doc, placeholder_text, img_file):
     print(img_file)
     img_shape = found_range.InlineShapes.AddPicture(img_file)
     img_shape.LockAspectRatio = True  # Zachowanie proporcji
-    # img_shape.Width = 300  # Opcjonalnie: ustawienie szerokości
-    # img_shape.Height = 200  # Opcjonalnie: ustawienie wysokości
 
     return True
 
@@ -210,8 +208,8 @@ def main():
         py_files = glob.glob(os.path.join("files/beginner", "**", "*.py"), recursive=True)
         png_files = glob.glob(os.path.join("files/beginner", "**", "*.png"), recursive=True)
 
-        # for py_file in py_files:
-        #     insert_code(py_file, word_app, doc)
+        for py_file in py_files:
+            insert_code(py_file, word_app, doc)
 
         for img_file in png_files:
             print(img_file)

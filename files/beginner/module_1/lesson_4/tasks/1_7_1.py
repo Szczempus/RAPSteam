@@ -1,5 +1,5 @@
 # Zadanie: 1_7_1.py
-# Input: Jan 30
+# Input: Jan,30
 
 imie = input("Podaj swoje imię: ")
 wiek = input("Podaj swój wiek: ")

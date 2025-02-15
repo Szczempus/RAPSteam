@@ -1,4 +1,4 @@
-# Input: 25
+# Input: 35
 
 import math
 import turtle

@@ -1,4 +1,5 @@
 # Input: 2,3
+
 def obliczPole(szerokosc, wysokosc):
     return szerokosc * wysokosc
 

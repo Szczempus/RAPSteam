@@ -1,4 +1,4 @@
-# Input: 4 2
+# Input: 4,2
 
 # Pobranie dwóch liczb od użytkownika
 a = int(input("Podaj pierwszą liczbę: "))

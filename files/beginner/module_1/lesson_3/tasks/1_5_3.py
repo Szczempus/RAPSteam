@@ -1,4 +1,4 @@
-# Input: Jan, Kowalski
+# Input: Jan,Kowalski,22
 
 imie = input("Imię: ")
 nazwisko = input("Nazwisko: ")

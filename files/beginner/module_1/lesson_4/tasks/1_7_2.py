@@ -1,5 +1,5 @@
 # Zadanie: 1_7_2.py
-# Input: czerwony niebieski
+# Input: czerwony,niebieski
 
 kolor1 = input("Podaj swój pierwszy ulubiony kolor: ")
 kolor2 = input("Podaj swój drugi ulubiony kolor: ")
