@@ -1,4 +1,4 @@
-# Input: 70 1.75
+# Input: 70,1.75
 
 waga = float(input("Podaj swoją wagę (kg): "))
 wzrost = float(input("Podaj swój wzrost (m): "))

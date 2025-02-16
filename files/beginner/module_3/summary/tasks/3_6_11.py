@@ -1,4 +1,4 @@
-# Input: 12345
+# Input: 35-001
 
 postal_code = input("Podaj kod pocztowy (XX-XXX): ")
 if len(postal_code) == 6 and postal_code[2] == "-" and postal_code.replace("-", "").isdigit():
