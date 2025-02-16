@@ -1,7 +1,9 @@
-# Auto-generated Python script
+# Input: 100, dolar
 
-def main():
-    print('This is 3_6_7.py')
-
-if __name__ == '__main__':
-    main()
+amount = float(input("Podaj kwotę w zł: "))
+currency = input("Podaj walutę (dolar/euro): ")
+exchange_rates = {"dolar": 3.97, "euro": 4.16}
+if currency in exchange_rates:
+    print(f"Kwota w {currency}: {amount / exchange_rates[currency]:.2f}")
+else:
+    print("Nieznana waluta")

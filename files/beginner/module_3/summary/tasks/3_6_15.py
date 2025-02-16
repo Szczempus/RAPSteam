@@ -1,7 +1,9 @@
-# Auto-generated Python script
+# Input: 15
 
-def main():
-    print('This is 3_6_15.py')
-
-if __name__ == '__main__':
-    main()
+temp = float(input("Podaj temperaturę: "))
+if temp < 10:
+    print("Niska")
+elif temp <= 25:
+    print("Umiarkowana")
+else:
+    print("Wysoka")

@@ -1,7 +1,17 @@
-# Auto-generated Python script
+# Input: 70 1.75
 
-def main():
-    print('This is 3_6_17.py')
+waga = float(input("Podaj swoją wagę (kg): "))
+wzrost = float(input("Podaj swój wzrost (m): "))
 
-if __name__ == '__main__':
-    main()
+bmi = waga / (wzrost ** 2)
+
+if bmi < 18.5:
+    kategoria = "niedowaga"
+elif 18.5 <= bmi < 25:
+    kategoria = "norma"
+elif 25 <= bmi < 30:
+    kategoria = "nadwaga"
+else:
+    kategoria = "otyłość"
+
+print(f"Twoje BMI wynosi: {bmi:.2f}. Kategoria: {kategoria}.")

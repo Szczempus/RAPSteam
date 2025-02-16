@@ -1,7 +1,8 @@
-# Auto-generated Python script
+# 3_6_9.py
+# Input: test@example.com
 
-def main():
-    print('This is 3_6_9.py')
-
-if __name__ == '__main__':
-    main()
+email = input("Podaj adres e-mail: ")
+if "@" in email and "." in email.split("@")[1]:
+    print("Poprawny adres e-mail")
+else:
+    print("Błędny adres e-mail")

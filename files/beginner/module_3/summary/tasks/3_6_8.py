@@ -1,7 +1,8 @@
-# Auto-generated Python script
+# Input: 123456
 
-def main():
-    print('This is 3_6_8.py')
-
-if __name__ == '__main__':
-    main()
+number = input("Podaj liczbę: ")
+# Sprawdzenie, czy liczba zaczyna się od "-" i reszta to cyfry
+if number.startswith("-") and number[1:].isdigit():
+    print("Podana wartość jest liczbą całkowitą ujemną.")
+else:
+    print("Podana wartość nie jest liczbą całkowitą ujemną.")

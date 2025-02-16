@@ -1,7 +1,5 @@
-# Auto-generated Python script
+# Input: 2024
 
-def main():
-    print('This is 3_6_14.py')
-
-if __name__ == '__main__':
-    main()
+year = int(input("Podaj rok: "))
+print("Przestępny" if (year % 4 == 0 and year % 100 != 0)
+                      or year % 400 == 0 else "Nieprzestępny")

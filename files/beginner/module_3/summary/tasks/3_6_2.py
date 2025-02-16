@@ -1,7 +1,4 @@
-# Auto-generated Python script
+# Input: 150
 
-def main():
-    print('This is 3_6_2.py')
-
-if __name__ == '__main__':
-    main()
+cm = float(input("Podaj wartość w centymetrach: "))
+print(f"Metry: {cm / 100}, Milimetry: {cm * 10}")

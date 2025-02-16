@@ -1,7 +1,7 @@
-# Auto-generated Python script
+# Input: 12-345
 
-def main():
-    print('This is 3_6_10.py')
-
-if __name__ == '__main__':
-    main()
+postal_code = input("Podaj kod pocztowy (XX-XXX): ")
+if len(postal_code) == 6 and postal_code[2] == "-" and postal_code.replace("-", "").isdigit():
+    print("Poprawny kod pocztowy")
+else:
+    print("Błędny kod pocztowy")

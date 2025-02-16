@@ -1,7 +1,6 @@
-# Auto-generated Python script
+# Input: 150, 50
 
-def main():
-    print('This is 3_6_5.py')
-
-if __name__ == '__main__':
-    main()
+number = int(input("Podaj liczbę: "))
+if not (1 <= number <= 100):
+    number = int(input("Podaj poprawną liczbę (1-100): "))
+print("Poprawna liczba:", number)

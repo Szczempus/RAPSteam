@@ -1,7 +1,7 @@
-# Auto-generated Python script
+# 3_6_3.py
 
-def main():
-    print('This is 3_6_3.py')
-
-if __name__ == '__main__':
-    main()
+# Input: hello123
+text = input("Podaj tekst: ")
+print(text.upper())
+print("Czy zawiera tylko litery:", text.isalpha())
+print("Długość tekstu:", len(text))

@@ -1,7 +1,9 @@
-# Auto-generated Python script
+# Input: 5
 
-def main():
-    print('This is 3_6_19.py')
+waga_kg = float(input("Podaj wagę w kilogramach: "))
 
-if __name__ == '__main__':
-    main()
+waga_g = waga_kg * 1000
+waga_funt = waga_kg * 2.20462
+
+print(f"Waga w gramach: {waga_g:.2f} g")
+print(f"Waga w funtach: {waga_funt:.2f} lb")
