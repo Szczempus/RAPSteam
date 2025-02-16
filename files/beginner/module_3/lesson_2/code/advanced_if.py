@@ -1,9 +1,15 @@
 # Plik: advanced_if.py
-# Input: 10
+# Input: 3 5
 
-n = int(input("Podaj liczbę: "))
+# Pobranie dwóch liczb od użytkownika
+a = int(input("Podaj pierwszą liczbę: "))
+b = int(input("Podaj drugą liczbę: "))
 
-if n > 5:
-    print("Liczba jest większa niż 5")
+# Obliczenie średniej
+srednia = (a + b) / 2
+
+# Sprawdzenie warunku i wypisanie wyniku
+if srednia > 3:
+    print("Zdane")
 else:
-    print("Liczba jest mniejsza lub równa 5")
+    print("Nie zdane")
