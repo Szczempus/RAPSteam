@@ -170,6 +170,7 @@ def insert_code(py_file, word_app, doc):
     relative_path = os.path.relpath(py_file, "files/beginner")
     # if last dir is not /code/ then skip
     elements = relative_path.split(os.sep)
+    print(elements)
     if not elements[-2] in ["code", "tasks"] or "__init__" in relative_path:
         return
     placeholder_name = relative_path.replace(os.sep, "_").replace("code_", "").replace("tasks_", "")
