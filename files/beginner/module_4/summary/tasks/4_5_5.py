@@ -1,2 +1,4 @@
-# Auto-generated Python script
+# Input: Python
 
+text = input("Podaj tekst: ")
+print(text[::-1])

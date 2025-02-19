@@ -1,2 +1,4 @@
-# Auto-generated Python script
+# Input: ananas
 
+text = input("Podaj tekst: ")
+print(text.count("a"))

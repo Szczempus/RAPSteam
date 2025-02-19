@@ -1,4 +1,4 @@
-# Input: 5 0.5
+# Input: 5,0.5
 
 liczba_calkowita = int(input("Podaj liczbę całkowitą: "))
 liczba_float = float(input("Podaj liczbę zmiennoprzecinkową: "))

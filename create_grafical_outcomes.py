@@ -11,9 +11,10 @@ import pygetwindow as gw
 python_exe = r"C:\Users\Patryk\AppData\Local\Programs\Python\Python311\python.exe"
 
 # Folder główny
-script_folder = "files/beginner/module_3"
+script_folder = "files/beginner/module_4"
 
 # Pobieranie plików .py w podfolderach "code"
+# py_files = glob.glob(os.path.join(script_folder, "**", "code", "*.py"), recursive=True)
 py_files = glob.glob(os.path.join(script_folder, "**", "tasks", "*.py"), recursive=True)
 
 
