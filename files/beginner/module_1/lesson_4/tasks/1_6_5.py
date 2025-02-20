@@ -1,9 +1,5 @@
-# Zadanie: 1_6_5.py
+a = 2 + 3j
+b = 1 - 4j
+suma = a + b
 
-produkt = {
-    "nazwa": "jabłko",
-    "cena": 3.5,
-    "ilość": 10
-}
-
-print(produkt)
+print(suma, type(suma))
