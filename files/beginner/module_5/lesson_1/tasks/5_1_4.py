@@ -16,3 +16,5 @@ def policz_slowa(zdanie):
     
     slowa = zdanie.split()
     return len(slowa)
+
+print(f"Zdanie 'Ala ma kota' zawiera {policz_slowa('Ala ma kota')} słów.")
