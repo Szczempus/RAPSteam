@@ -1,4 +1,4 @@
-# Input: YYYY-MM-DD
+# Input: 1994-08-06, 2025-02-20
 
 from datetime import datetime
 

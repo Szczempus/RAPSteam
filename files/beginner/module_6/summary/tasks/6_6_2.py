@@ -1,9 +1,15 @@
 import os
+import shutil
 
-filename = "dane.txt"
+source_file = "dane.txt"
+destination_folder = "dokumenty"
+destination_path = os.path.join(destination_folder, source_file)
 
-if os.path.exists(filename):
-    os.remove(filename)
-    print(f"\nPlik '{filename}' został usunięty.")
+if not os.path.exists(destination_folder):
+    os.makedirs(destination_folder)
+
+if os.path.exists(source_file):
+    shutil.copy(source_file, destination_path)
+    print(f"\nPlik '{source_file}' skopiowano do '{destination_folder}'.")
 else:
-    print(f"\nPlik '{filename}' nie istnieje, nie można usunąć.")
+    print(f"\nPlik '{source_file}' nie istnieje, nie można skopiować.")

@@ -1,3 +1,5 @@
+# Input: C:\Kurs
+
 import os
 
 path = input("Podaj ścieżkę: ")
