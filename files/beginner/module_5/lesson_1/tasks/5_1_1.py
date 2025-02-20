@@ -8,3 +8,5 @@ def mnozenie(a, b):
     :return: Iloczyn dwóch liczb
     """
     return a * b
+
+print(f"Mnożenie 3 x 4 = {mnozenie(3, 4)}")
