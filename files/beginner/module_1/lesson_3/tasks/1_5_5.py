@@ -1,9 +1,8 @@
-# Input: Jan,Kowalski,18
+imie, nazwisko = "Jan", "Kowalski"
+pelne_plus = imie + nazwisko
+pelne_join = " ".join([imie.lower(), nazwisko.lower()])
+pelne_upper = pelne_plus.upper()
 
-imie = input("Imię: ")
-nazwisko = input("Nazwisko: ")
-wiek = input("Wiek: ")
-
-pelne_imie = " ".join([imie, nazwisko])
-
-print(pelne_imie.upper(), pelne_imie.title(), len(nazwisko), type(wiek), sep="\n")
+print(pelne_plus, type(pelne_plus), len(pelne_plus))
+print(pelne_join)
+print(pelne_upper)

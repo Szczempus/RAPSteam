@@ -1,10 +1,5 @@
-# Input: Jan,Kowalski,22
+# Obliczanie 2^8
+wynik = 2 ** 8
 
-imie = input("Imię: ")
-nazwisko = input("Nazwisko: ")
-
-x = input("Podaj liczbę: ")
-print(f"Typ: {type(x)}"
-      f"\nInt: {int(float(x))}"
-      f"\nFloat: {float(x)}"
-      f"\nStr: {str(x)}")
+# Wyświetlenie wyniku
+print(f"2 do potęgi 8 to:", wynik)
