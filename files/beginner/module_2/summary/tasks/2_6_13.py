@@ -1,2 +1,2 @@
-# Auto-generated Python script
-
+x, y, z = 1, 2, 3
+print(x, y, z)

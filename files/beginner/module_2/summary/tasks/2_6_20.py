@@ -1,2 +1,3 @@
-# Auto-generated Python script
-
+liczba = None
+liczba = 0  # zmieniamy na int
+print(liczba, type(liczba))

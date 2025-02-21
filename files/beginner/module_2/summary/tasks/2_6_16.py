@@ -1,2 +1,3 @@
-# Auto-generated Python script
-
+liczba = 10
+liczba = float(liczba)
+print(liczba, type(liczba))
