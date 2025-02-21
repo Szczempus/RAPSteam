@@ -8,4 +8,3 @@ def double_letters(text):
 
 word = input("Podaj słowo: ")
 print(double_letters(word))
-

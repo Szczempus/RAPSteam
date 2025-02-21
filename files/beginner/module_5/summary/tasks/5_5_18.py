@@ -1,3 +1,4 @@
+
 def calculate_average(lst):
     total = 0
     for num in lst:

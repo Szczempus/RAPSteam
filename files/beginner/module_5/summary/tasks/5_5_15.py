@@ -10,5 +10,3 @@ a = int(input("Podaj pierwszy element ciągu: "))
 r = int(input("Podaj iloraz ciągu: "))
 n = int(input("Podaj długość ciągu: "))
 print(geometric_sequence(a, r, n))
-
-
