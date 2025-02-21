@@ -1,2 +1,17 @@
-# Auto-generated Python script
+#Input: 5, 3, 6, 8, 2, exit
+
+def input_numbers():
+    numbers = []
+    while True:
+        user_input = input("Enter a number (or type 'exit' to finish): ")
+        if user_input.lower() == 'exit':
+            break
+        try:
+            number = float(user_input)
+            numbers.append(number)
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+    return numbers
+
+input_numbers()
 
