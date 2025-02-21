@@ -1,5 +1,5 @@
 # Plik: advanced_if.py
-# Input: 3 5
+# Input: 3,5
 
 # Pobranie dwóch liczb od użytkownika
 a = int(input("Podaj pierwszą liczbę: "))

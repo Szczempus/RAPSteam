@@ -1,4 +1,4 @@
-#Input: 5
+# Input: 5
 
 def count_down(n):
     """
@@ -10,6 +10,7 @@ def count_down(n):
     while n > 0:
         print(n)
         n -= 1
+
 
 number = int(input("Podaj liczbę: "))
 count_down(number)
