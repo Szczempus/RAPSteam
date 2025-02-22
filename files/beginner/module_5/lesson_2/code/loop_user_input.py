@@ -1,3 +1,4 @@
+# Input: koniec
 
 user_input = ""
 while user_input.lower() != "koniec":
