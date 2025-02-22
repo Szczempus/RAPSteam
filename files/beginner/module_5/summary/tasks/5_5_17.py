@@ -1,3 +1,4 @@
+
 def count_letters(word):
     count = 0
     for char in word:
@@ -6,6 +7,4 @@ def count_letters(word):
     return count
 
 word = "Hello World"
-print(f"Słos {word} zawiera {count_letters(word)} liter")
-
-
+print(f"Słowo {word} zawiera {count_letters(word)} liter")

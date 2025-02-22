@@ -13,5 +13,5 @@ def input_numbers():
             print("Invalid input. Please enter a valid number.")
     return numbers
 
+print(input_numbers())
 
-input_numbers()
