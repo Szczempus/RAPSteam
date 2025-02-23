@@ -1,8 +1,10 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 
+matplotlib.use("TkAgg")  # Lub inny backend, np. Agg, Qt5Agg
 # Wczytanie danych z pliku CSV
-df = pd.read_csv("Kurs\ceny_mieszkan.csv")
+df = pd.read_csv("ceny_mieszkan.csv")
 
 # Wyświetlenie tabeli
 print(df)
