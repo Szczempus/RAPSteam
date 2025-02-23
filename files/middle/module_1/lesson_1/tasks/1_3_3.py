@@ -1,2 +1,2 @@
-
-
+#  wyniku
+print("Jan" + "Kowalski")
