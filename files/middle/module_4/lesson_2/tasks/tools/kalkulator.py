@@ -1,2 +1,2 @@
-def suma(a, b):
+def dodaj(a, b):
     return a + b
