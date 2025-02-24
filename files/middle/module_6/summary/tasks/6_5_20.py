@@ -18,7 +18,7 @@ def wczytaj_plik():
 def rysuj_wykres():
     if df is not None:
         ax.clear()
-        df.groupby("Miasto")["Cena za m²"].mean().plot(kind="bar", ax=ax)
+        df.groupby("Miasto")["Cena za m"].mean().plot(kind="bar", ax=ax)
         ax.set_title("Średnia cena mieszkań w miastach")
         canvas.draw()
 

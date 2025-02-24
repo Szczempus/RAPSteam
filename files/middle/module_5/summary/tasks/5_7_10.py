@@ -1,3 +1,5 @@
+# Input: 150
+
 class PrzekroczonoZakresError(Exception):
     pass
 

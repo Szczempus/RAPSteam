@@ -1,3 +1,5 @@
+# Input: abc
+
 # Tworzenie pliku, jeśli nie istnieje
 tekst_przykladowy = """To jest przykładowy plik.
 Zawiera kilka linijek tekstu.

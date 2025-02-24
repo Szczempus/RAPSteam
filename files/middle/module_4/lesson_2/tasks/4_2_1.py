@@ -1,3 +1,5 @@
+# Input: 5
+
 import math
 
 # Pobranie liczby od użytkownika

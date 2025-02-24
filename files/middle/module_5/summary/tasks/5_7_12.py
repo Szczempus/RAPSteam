@@ -1,4 +1,4 @@
-# Input: Zdanie 1., Zdanie 2., Zdanie 3.
+# Input: Zdanie 1., Zdanie 2.
 
 # Tworzenie pliku
 open("lista.txt", "w", encoding="utf-8").close()

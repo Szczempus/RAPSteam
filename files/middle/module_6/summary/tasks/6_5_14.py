@@ -20,7 +20,7 @@ def rysuj_wykres():
     ax.plot(ceny, marker='o', linestyle='-')
     ax.set_title(f"Ceny mieszkań w {miasto}")
     ax.set_xlabel("Rok")
-    ax.set_ylabel("Cena za m² (PLN)")
+    ax.set_ylabel("Cena za m (PLN)")
     canvas.draw()
 
 

@@ -144,7 +144,7 @@ def insert_img(img_file, word_app, doc):
     base_name = os.path.splitext(os.path.basename(img_file))[0]
 
     # Tworzymy placeholder na podstawie ścieżki
-    relative_path = os.path.relpath(img_file, "files/beginner")
+    relative_path = os.path.relpath(img_file, "files/middle")
     relative_path = relative_path.replace("/", "_").replace("\\", "_")  # Zamiana separatorów
     elements = relative_path.split("_")
 
@@ -167,7 +167,7 @@ def insert_code(py_file, word_app, doc):
 
     # Tworzymy placeholder w formacie zgodnym ze strukturą katalogów
     # np. "lesson_2/code/bad.py" -> "lesson_2_code_bad"
-    relative_path = os.path.relpath(py_file, "files/beginner")
+    relative_path = os.path.relpath(py_file, "files/middle")
     # if last dir is not /code/ then skip
     elements = relative_path.split(os.sep)
     print(elements)
@@ -199,15 +199,15 @@ def main():
     # Możesz dać False, żeby wszystko działo się w tle.
     word_app.Visible = True
 
-    doc_path = "python_podstawowy.docx"
-    output_doc_path = "python_podstawowy_final.docx"
+    doc_path = "python_średniozaawansowany.docx"
+    output_doc_path = "python_średniozaawansowany_final.docx"
 
     try:
         # Otwórz dokument bazowy
         doc = word_app.Documents.Open(os.path.abspath(doc_path))
 
-        py_files = glob.glob(os.path.join("files/beginner", "**", "*.py"), recursive=True)
-        png_files = glob.glob(os.path.join("files/beginner", "**", "*.png"), recursive=True)
+        py_files = glob.glob(os.path.join("files/middle", "**", "*.py"), recursive=True)
+        png_files = glob.glob(os.path.join("files/middle", "**", "*.png"), recursive=True)
 
         for py_file in py_files:
             insert_code(py_file, word_app, doc)

@@ -1,3 +1,5 @@
+# Input: Wpis do dziennika
+
 import os
 from datetime import datetime
 
