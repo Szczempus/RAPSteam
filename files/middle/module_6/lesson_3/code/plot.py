@@ -11,11 +11,11 @@ print(df)
 
 # Tworzenie wykresu słupkowego
 plt.figure(figsize=(8, 5))
-plt.bar(df["Miasto"], df["Cena za m² (PLN)"], color=["blue", "green", "red", "orange", "purple", "gray"])
+plt.bar(df["Miasto"], df["Cena za m (PLN)"], color=["blue", "green", "red", "orange", "purple", "gray"])
 
 # Opisy osi i tytuł
 plt.xlabel("Miasto")
-plt.ylabel("Cena za m² (PLN)")
+plt.ylabel("Cena za m (PLN)")
 plt.title("Średnie ceny mieszkań w polskich miastach")
 
 # Wyświetlenie wykresu

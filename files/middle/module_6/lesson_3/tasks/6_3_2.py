@@ -4,4 +4,4 @@ import pandas as pd
 df = pd.read_csv("ceny_mieszkan.csv")
 
 # Wyświetlenie pierwszych 5 wierszy
-df.head()
+print(df.head())

@@ -3,7 +3,7 @@ import pandas as pd
 # Wczytanie danych
 df = pd.DataFrame({
     'Miasto': ['Warszawa', 'Kraków', 'Wrocław', 'Gdańsk'],
-    'Cena za m²': [10000, 8000, 7000, 7500]
+    'Cena za m': [10000, 8000, 7000, 7500]
 })
 
 # Sortowanie według ceny za m²

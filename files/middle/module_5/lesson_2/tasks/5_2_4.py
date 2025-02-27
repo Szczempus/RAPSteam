@@ -1,3 +1,5 @@
+# Input: Niemcy
+
 kraje = {"Polska": "Warszawa", "Niemcy": "Berlin", "Francja": "Paryż"}
 
 try:

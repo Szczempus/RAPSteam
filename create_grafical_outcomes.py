@@ -11,11 +11,19 @@ import pygetwindow as gw
 python_exe = r"C:\Users\Patryk\AppData\Local\Programs\Python\Python311\python.exe"
 
 # Folder główny
-script_folder = "files/middle/module_6"
+script_folder = "files/middle/module_4"
 
 # Pobieranie plików .py w podfolderach "code"
+# single = "4_5_16"
+single = None
+
 py_files = glob.glob(os.path.join(script_folder, "**", "code", "*.py"), recursive=True)
 py_files += glob.glob(os.path.join(script_folder, "**", "tasks", "*.py"), recursive=True)
+
+if single:
+    py_files = glob.glob(os.path.join(script_folder, "**", "code", f"{single}.py"), recursive=True)
+    py_files += glob.glob(os.path.join(script_folder, "**", "tasks", f"{single}.py"), recursive=True)
+    print(py_files)
 
 
 def crop_me(screenshot_path):
@@ -153,7 +161,7 @@ for py_file in py_files:
     cmd_command = f'start cmd /k "color F0 && {python_exe} {py_file} {arguments}"'
 
     process = subprocess.Popen(cmd_command, shell=True, stdin=subprocess.PIPE, text=True)
-    time.sleep(1)
+    time.sleep(3)
 
     if inputs:
         print(f"🔧 Wprowadzam inputy: {inputs}")
