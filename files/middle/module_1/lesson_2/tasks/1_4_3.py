@@ -1,4 +1,3 @@
-# Zadanie: 1_7_3.py
 # Input: 23
 
 celsius = float(input("Podaj temperaturę w stopniach Celsjusza: "))

@@ -1,4 +1,3 @@
-# Zadanie: 1_8_1.py
 
 import requests
 

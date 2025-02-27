@@ -1,4 +1,3 @@
-# Zadanie: 1_8_2.py
 
 import turtle
 

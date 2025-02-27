@@ -1,4 +1,3 @@
-# Zadanie: 1_7_5.py
 # Input: 3,5,1
 
 liczba1 = int(input("Podaj pierwszą liczbę całkowitą: "))
