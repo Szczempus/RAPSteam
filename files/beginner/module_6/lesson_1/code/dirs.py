@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 # Przeglądanie zawartości katalogu za pomocą os
-folder = "./Kurs"
+folder = "C:\\"
 print("Pliki i katalogi w bieżącym katalogu:", os.listdir(folder))
 
 # Wyszukiwanie plików .txt za pomocą pathlib

@@ -40,3 +40,5 @@ canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.get_tk_widget().pack()
 
 root.mainloop()
+
+ 
