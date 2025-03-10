@@ -1,10 +1,13 @@
 import os
+import shutil
 
-extension = ".txt"
 current_directory = os.getcwd()
+archive_directory = os.path.join(current_directory, 'archiwum')
 
-txt_files = [f for f in os.listdir(current_directory) if f.endswith(extension)]
+if not os.path.exists(archive_directory):
+    os.makedirs(archive_directory)
 
-print("\nPliki o rozszerzeniu .txt w bieżącym katalogu:")
-for file in txt_files:
-    print(file)
+for filename in os.listdir(current_directory):
+    if filename.endswith('.txt'):
+        file_path = os.path.join(current_directory, filename)
+        shutil.move(file_path, archive_directory)
