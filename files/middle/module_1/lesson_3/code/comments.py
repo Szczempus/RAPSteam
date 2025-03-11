@@ -7,8 +7,8 @@ To jest komentarz wielolinijkowy.
 Może służyć do opisywania złożonych fragmentów kodu.
 """
 
-# To jest zły komentarz
+# Poniżej jest zły komentarz
 x= x + 1  # Zwiększamy x o 1
 
-# To jest dobry komentarz
+# Poniżej jest dobry komentarz
 x = x + 1 # Kompensacja błędu zaokrąglenia
