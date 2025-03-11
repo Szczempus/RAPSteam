@@ -1,4 +1,10 @@
-# Input: 4 8 12
+from statistics import mean
 
+# Pobranie trzech liczb od użytkownika w jednej linii
 numbers = list(map(float, input("Podaj trzy liczby: ").split()))
-print(f"Średnia: {sum(numbers) / len(numbers)}")
+
+# Obliczenie średniej arytmetycznej za pomocą mean()
+srednia = mean(numbers)
+
+# Wyświetlenie wyniku
+print(f"Średnia: {srednia:.2f}")
