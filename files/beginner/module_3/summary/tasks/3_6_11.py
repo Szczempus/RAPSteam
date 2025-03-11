@@ -1,6 +1,6 @@
 # Input: 0.89,4.0 
 
-min_obecnosc = 80
+min_obecnosc = 0.8
 min_srednia = 3.5
 
 obecnosc = float(input("Podaj procent obecności: "))
