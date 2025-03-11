@@ -1,4 +1,4 @@
-# Input: 0.5
+# Input: 46
 
 number = float(input("Enter a number: "))
 integer_part = int(number)

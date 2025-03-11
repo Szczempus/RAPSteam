@@ -8,13 +8,13 @@ import pyautogui
 import pygetwindow as gw
 
 # Pełna ścieżka do Pythona (zmień na swoją wersję)
-python_exe = r"C:\Users\Patryk\AppData\Local\Programs\Python\Python311\python.exe"
+python_exe = r"C:\Users\Admin\AppData\Local\Programs\Python\Python39\python.exe"
 
 # Folder główny
-script_folder = "files/beginner/module_1"
+script_folder = "files/beginner/module_6"
 
 # Pobieranie plików .py w podfolderach "code"
-single = "1_7_5"
+single = "6_1_5"
 # single = None
 
 py_files = glob.glob(os.path.join(script_folder, "**", "code", "*.py"), recursive=True)
