@@ -1,8 +1,24 @@
-# Plik: text_case_methods.py
+# Plik: string_concatenation.py
 
-tekst = "python jest świetny!"
+# Dane wejściowe
+hello = "Hello"
+world = "World"
+name = "John"
 
-print("Wielkie litery:", tekst.upper())  # PYTHON JEST ŚWIETNY!
-print("Małe litery:", tekst.lower())  # python jest świetny!
-print("Tytułowe litery:", tekst.title())  # Python Jest Świetny!
-print("Pierwsza litera wielka:", tekst.capitalize())  # Python jest świetny!
+# Operator +
+plus_concat = hello + " " + world
+
+# Metoda join()
+join_concat = " ".join([hello, world])
+
+# f-string
+f_string_concat = f"Hi {name}"
+
+# Metoda .format()
+format_concat = "Hi {}".format(name)
+
+# Wyświetlenie wyników
+print("Operator +      :", plus_concat)
+print("Metoda join()   :", join_concat)
+print("f-string        :", f_string_concat)
+print("Metoda .format():", format_concat)

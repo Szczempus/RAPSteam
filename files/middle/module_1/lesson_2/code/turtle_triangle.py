@@ -8,7 +8,7 @@ screen.title("Turtle Triangle")
 triangle_turtle = turtle.Turtle()
 
 # Draw a triangle
-for _ in range(3):
+for x in range(3):
     triangle_turtle.forward(100)  # Move forward by 100 units
     triangle_turtle.left(120)     # Turn left by 120 degrees
 

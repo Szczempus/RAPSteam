@@ -5,7 +5,7 @@ import turtle
 
 # Funkcja rysująca pojedynczy płatek
 def rysuj_platek(promien, kat):
-    for _ in range(2):  # Dwa łuki tworzą płatek
+    for x in range(2):  # Dwa łuki tworzą płatek
         turtle.circle(promien, kat)  # Rysuj łuk
         turtle.left(180 - kat)  # Obrót żółwia, aby ustawić go do rysowania kolejnego łuku
 
@@ -13,7 +13,7 @@ def rysuj_platek(promien, kat):
 # Funkcja rysująca kwiat
 def rysuj_kwiat(liczba_platek, promien, kat_platek):
     kat_obrotu = 360 / liczba_platek  # Kąt obrotu między płatkami
-    for _ in range(liczba_platek):
+    for x in range(liczba_platek):
         rysuj_platek(promien, kat_platek)  # Rysuj płatek
         turtle.left(kat_obrotu)  # Obrót żółwia do pozycji kolejnego płatka
 
