@@ -6,5 +6,5 @@ zbior1 = set(wprowadzenie1.split())
 wprowadzenie2 = input("Podaj elementy drugiego zbioru (oddziel spacjami): ").strip()
 zbior2 = set(wprowadzenie2.split())
 
-suma_roz_zbiorow = zbior1 ^ zbior2
-print("\nSuma rozłączna (XOR) zbiorów:", suma_roz_zbiorow)
+czesc_wspolna = zbior1 & zbior2
+print("Część wspólna zbiorów:", czesc_wspolna)
