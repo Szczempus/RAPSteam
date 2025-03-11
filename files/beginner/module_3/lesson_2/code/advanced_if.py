@@ -8,8 +8,10 @@ b = int(input("Podaj drugą liczbę: "))
 # Obliczenie średniej
 srednia = (a + b) / 2
 
-# Sprawdzenie warunku i wypisanie wyniku
-if srednia > 3:
+# Sprawdzenie warunków i wypisanie wyniku
+if srednia > 5:
+    print("Bardzo dobrze")
+elif srednia > 3:
     print("Zdane")
 else:
     print("Nie zdane")

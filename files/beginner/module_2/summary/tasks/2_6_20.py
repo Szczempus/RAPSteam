@@ -1,3 +1,3 @@
-liczba = None
-liczba = 0  # zmieniamy na int
-print(liczba, type(liczba))
+znaki  = None
+znaki = str(znaki)
+print(znaki)
