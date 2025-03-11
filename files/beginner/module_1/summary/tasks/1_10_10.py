@@ -1,10 +1,7 @@
-# Input: 4 5 3 2
+# Input: 4,5,3 
 
-wprowadzenie = input("Podaj oceny oddzielone spacjami (np. 4 5 3 2): ").strip()
-oceny = []
-
-for ocena in wprowadzenie.split():
-    oceny.append(int(ocena))
-
-srednia = sum(oceny) / len(oceny)
-print(f"\nŚrednia ocen: {srednia:.2f}")
+pierwsza = float(input("Podaj pierwszą ocene: "))
+druga = float(input("Podaj drugą ocene: "))
+trzecia = float(input("Podaj trzecią ocene: "))
+srednia = (pierwsza + druga + trzecia) / 3
+print(f"Średnia ocen to: {srednia:.2f}")
