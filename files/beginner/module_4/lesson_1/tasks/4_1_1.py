@@ -1,4 +1,5 @@
-# Input: jan
+# Input: Hello
 
-imie = input("Podaj imię: ")
-print(f"Poprawione imię: {imie.capitalize()}")
+user_input = input("Enter a string: ")
+print("First character:", user_input[0])
+print("Last character:", user_input[-1])

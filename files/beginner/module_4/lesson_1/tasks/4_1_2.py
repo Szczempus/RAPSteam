@@ -1,7 +1,6 @@
-# Input: jan, 18, warszawa
+# Input: Kapustka zasmazana, a
 
-imie = input("Podaj imię: ")
-wiek = input("Podaj wiek: ")
-miasto = input("Podaj miasto: ")
-
-print(f"{imie} ma {wiek} lat i mieszka w {miasto}.")
+sentence = input("Podaj zdanie: ")
+delimiter = input("Podaj znak, który będzie użyty do podziału: ")
+words = sentence.split(delimiter)
+print(words)

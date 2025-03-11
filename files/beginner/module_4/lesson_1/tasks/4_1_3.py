@@ -1,4 +1,5 @@
-# Input: jan
+# Input: kurs@rapsteam.edu.pl
 
-tekst = input("Podaj tekst: ")
-print(f"Tekst ma {len(tekst)} znaków.")
+email = input("Podaj adres e-mail: ")
+domain = email.split('@')[-1]
+print("Część po znaku '@':", domain)
