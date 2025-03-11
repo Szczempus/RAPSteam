@@ -1,7 +1,16 @@
-# Input: 35-001
+# Input: 0.89,4.0 
 
-postal_code = input("Podaj kod pocztowy (XX-XXX): ")
-if len(postal_code) == 6 and postal_code[2] == "-" and postal_code.replace("-", "").isdigit():
-    print("Poprawny kod pocztowy")
+min_obecnosc = 80
+min_srednia = 3.5
+
+obecnosc = float(input("Podaj procent obecności: "))
+srednia = float(input("Podaj średnią ocen: "))
+
+if obecnosc >= min_obecnosc and srednia >= min_srednia:
+    print("Promocja do klasy wyżej")
+elif obecnosc < min_obecnosc and srednia < min_srednia:
+    print("Musisz powtórzyć rok")
+elif obecnosc < min_obecnosc and srednia >= min_srednia: 
+    print("Musisz poprawić obecności")
 else:
-    print("Błędny kod pocztowy")
+    print("Musisz poprawić oceny")
