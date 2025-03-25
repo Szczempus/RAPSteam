@@ -1,6 +1,13 @@
-def power(base, exp):
-    """Podnosi liczbę base do potęgi exp."""
-    return base ** exp
+import math
 
+def oblicz_logarytm(x, podstawa):
+    """
+    Funkcja oblicza logarytm o podstawie podstawa z liczby x.
+    """
+    
+    return math.log(x)/ math.log(podstawa)
 
-print(power(2, 3))  # Output: 8
+print(oblicz_logarytm(8, 2))
+    
+    
+    

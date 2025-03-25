@@ -1,6 +1,5 @@
-def celsius_to_fahrenheit(c):
-    """Konwertuje temperaturę z Celsjusza na Fahrenheita."""
-    return (c * 9 / 5) + 32
+def reverse_list(lst):
+    """Zwraca odwróconą listę."""
+    return lst[::-1]
 
-
-print(celsius_to_fahrenheit(0))  # Output: 32.0
+print(reverse_list([1, 2, 3, 4]))  # Output: [4, 3, 2, 1]
