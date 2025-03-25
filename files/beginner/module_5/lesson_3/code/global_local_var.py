@@ -4,6 +4,7 @@ global_var = "Jestem globalna"
 
 def przyklad():
     # Zmienna lokalna
+    global global_var
     local_var = "Jestem lokalna"
     print("Wewnątrz funkcji:")
     print("global_var =", global_var)  # dostęp do zmiennej globalnej
