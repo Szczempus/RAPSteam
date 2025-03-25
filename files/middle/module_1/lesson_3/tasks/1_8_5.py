@@ -1,4 +1,4 @@
-# Input: 1515
+# Input: 45
 
 b = int(input("Podaj liczbę: "))
 if b < 50 and b % 2 != 0 and b % 3 == 0:

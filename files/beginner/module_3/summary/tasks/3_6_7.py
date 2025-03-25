@@ -1,4 +1,4 @@
-# Input: 100, dolar
+# Input: 100,dolar
 
 amount = float(input("Podaj kwotę w zł: "))
 currency = input("Podaj walutę (dolar/euro): ")
