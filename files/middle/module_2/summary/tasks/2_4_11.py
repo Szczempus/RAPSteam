@@ -1,4 +1,8 @@
-# Input: kot pies ptak
 
-words = input("Podaj trzy słowa: ").split()
-print(f"Lista: {words}")
+garderoba = ["spodnie", "koszula", "kubek", "bielizna", "buty"]
+
+print(f"Przed: {garderoba}")
+garderoba.remove("kubek")
+garderoba.pop()
+print(f"Po: {garderoba}")
+
