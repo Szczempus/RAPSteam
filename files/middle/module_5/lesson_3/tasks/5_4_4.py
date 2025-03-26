@@ -11,4 +11,4 @@ df_grouped = df.groupby("species")["petal length (cm)"].mean()
 
 # Wyświetlenie wyników
 print("\nŚrednia długość płatka dla każdego gatunku irysa:")
-print(df_grouped)
+print(df_grouped.head())

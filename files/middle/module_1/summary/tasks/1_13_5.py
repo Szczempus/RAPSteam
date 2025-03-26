@@ -1,4 +1,4 @@
-# Input: 150, 50
+# Input: 150,50
 
 number = int(input("Podaj liczbę: "))
 if not (1 <= number <= 100):

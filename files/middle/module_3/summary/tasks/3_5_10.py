@@ -1,3 +1,4 @@
+# Input: 97
 
 def is_prime(n):
     if n <= 1:

@@ -1,3 +1,4 @@
+# Input: 6
 class LiczbaUjemnaError(Exception):
     """Wyjątek zgłaszany, gdy liczba jest ujemna."""
 

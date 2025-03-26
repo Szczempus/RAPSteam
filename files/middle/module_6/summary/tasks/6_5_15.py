@@ -7,6 +7,6 @@ df = pd.DataFrame({
 })
 
 # Sortowanie według ceny za m²
-df_sorted = df.sort_values(by='Cena za m²')
+df_sorted = df.sort_values(by='Cena za m')
 
 print(df_sorted)
